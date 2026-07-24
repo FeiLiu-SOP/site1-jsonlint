@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Lint Online – Validate &amp; Format JSON</title>
+    <meta
+      name="description"
+      content="Free online JSON linter and formatter. Paste JSON, validate syntax, and pretty-print in one click."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>JSON Lint &amp; Formatter</h1>
+      <p class="lead">Paste JSON below. Validate syntax or format with 2-space indentation.</p>
+
+      <div class="toolbar">
+        <button type="button" id="btn-validate" class="btn primary">Validate</button>
+        <button type="button" id="btn-format" class="btn">Format</button>
+        <button type="button" id="btn-clear" class="btn ghost">Clear</button>
+      </div>
+
+      <label class="label" for="input">Input JSON</label>
+      <textarea id="input" spellcheck="false" placeholder='{"hello":"world"}'></textarea>
+
+      <label class="label" for="output">Result</label>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free tool for developers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

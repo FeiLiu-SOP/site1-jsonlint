@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
     <meta name="google-site-verification" content="0L_odWiMxpRRxOa7MITlnzOhQbnFJM3Ldc9F_dQR2lQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Lint Online – Validate &amp; Format JSON</title>
@@ -25,7 +34,14 @@
 
     <main class="wrap">
       <h1>JSON Lint &amp; Formatter</h1>
-      <p class="lead">Paste JSON below. Validate syntax or format with 2-space indentation.</p>
+      <p class="lead">Paste JSON below — validated entirely in your browser. Your data is never sent to our servers.</p>
+
+      <div class="examples">
+        <span class="examples-label">Try an example:</span>
+        <button type="button" class="btn example" data-example="valid">Valid JSON</button>
+        <button type="button" class="btn example" data-example="invalid">Invalid JSON</button>
+        <button type="button" class="btn example" data-example="nested">Nested</button>
+      </div>
 
       <div class="toolbar">
         <button type="button" id="btn-validate" class="btn primary">Validate</button>
@@ -38,10 +54,28 @@
 
       <label class="label" for="output">Result</label>
       <pre id="output" aria-live="polite">Ready.</pre>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>Is this JSON linter safe?</dt>
+          <dd>Yes. Validation runs entirely in your browser. Your JSON is not uploaded to our server.</dd>
+          <dt>Can I lint large JSON files?</dt>
+          <dd>For typical API payloads, yes. Very large files may slow your browser — split or trim the file if needed.</dd>
+          <dt>Do I need to upload my file?</dt>
+          <dd>No upload required. Paste JSON text directly. Optional file upload can be added later.</dd>
+        </dl>
+      </section>
     </main>
 
     <footer class="site-footer wrap">
       <p>Free tool for developers. JSON is processed in your browser — not sent to a server.</p>
+      <p>
+        Also try:
+        <a href="https://site2-csvtojson.pages.dev/" rel="noopener">CSV to JSON</a>
+        ·
+        <a href="https://site3-jsontocsv.pages.dev/" rel="noopener">JSON to CSV</a>
+      </p>
     </footer>
 
     <script src="/app.js"></script>

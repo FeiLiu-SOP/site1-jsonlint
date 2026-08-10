@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Compare Online — Diff Two JSON Payloads (Free Guide)</title>
+    <meta
+      name="description"
+      content="Need to compare JSON online? Learn how to diff API responses and configs, validate both sides, and pretty-print for review — browser-only, no upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/json-compare.html" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-main">
+      <h1>JSON Compare — Check Two Payloads Before You Diff</h1>
+      <p class="lead">
+        <strong>JSON compare</strong> usually means finding what changed between two API responses, config versions, or
+        test fixtures. Before a visual diff, both sides must be <strong>valid JSON</strong> — otherwise diff tools fail
+        or show misleading results. Searchers often look for <strong>json compare online</strong> or
+        <strong>jsonlint compare</strong> alongside validators like jsonlint.com.
+      </p>
+
+      <h2>When developers compare JSON</h2>
+      <ul>
+        <li><strong>API regression</strong> — same endpoint, two deploys; spot new or removed fields.</li>
+        <li><strong>Config drift</strong> — staging vs production feature flags or service configs.</li>
+        <li><strong>Test fixtures</strong> — expected vs actual output in CI debugging.</li>
+      </ul>
+
+      <h2>Simple compare workflow with a linter</h2>
+      <ol>
+        <li>Paste the first JSON → <strong>Validate</strong> → <strong>Format</strong> (copy pretty output).</li>
+        <li>Paste the second JSON → validate and format the same way.</li>
+        <li>Use your editor diff, <code>git diff</code>, or a dedicated JSON diff tool on the formatted text.</li>
+      </ol>
+      <p>
+        Formatting both sides first makes line-based diffs readable and catches syntax errors early.
+      </p>
+
+      <h2>Is it safe to compare JSON online?</h2>
+      <p>
+        Use tools that parse JSON <strong>locally in the browser</strong> when payloads contain secrets. Our validator
+        does not upload your text to a server — validate each side here, then diff offline if needed.
+      </p>
+
+      <h2>JSON compare vs full diff UIs</h2>
+      <p>
+        Dedicated compare sites show side-by-side trees. This page pairs with our
+        <strong>validate + format</strong> tool when you want a minimal jsonlint-style step before diffing elsewhere.
+      </p>
+
+      <p>
+        <a href="/" class="btn primary">Open JSON Lint tool</a>
+      </p>
+      <p>
+        Related:
+        <a href="/json-repair.html">JSON repair guide</a>
+        ·
+        <a href="/jsonlint.html">JSONLint guide</a>
+        ·
+        <a href="/json-lint-online.html">JSON lint online guide</a>
+      </p>
+    </main>
+    <footer class="site-footer wrap">
+      <p>Free tool for developers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Repair Online — Fix Invalid JSON (Browser Validator)</title>
+    <meta
+      name="description"
+      content="Need JSON repair? Learn common JSON syntax fixes, validate repaired text, and pretty-print in your browser. Free jsonlint-style tool — no upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/json-repair.html" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-main">
+      <h1>JSON Repair — Find and Fix Broken JSON</h1>
+      <p class="lead">
+        <strong>JSON repair</strong> means fixing syntax so <code>JSON.parse</code> succeeds: remove trailing commas,
+        fix quotes, close brackets, and strip invalid comments. Many teams search <strong>json repair</strong> or
+        <strong>jsonlint repair</strong> after copying API responses, LLM output, or legacy config files.
+      </p>
+
+      <h2>Common fixes before you validate</h2>
+      <ul>
+        <li><strong>Trailing commas</strong> — delete the comma after the last property in <code>{ }</code> or <code>[ ]</code>.</li>
+        <li><strong>Single quotes</strong> — JSON requires double quotes around strings and keys.</li>
+        <li><strong>Unclosed braces</strong> — match every <code>{</code> with <code>}</code> and <code>[</code> with <code>]</code>.</li>
+        <li><strong>Comments</strong> — standard JSON does not allow <code>//</code> or <code>/* */</code>; remove or move to docs.</li>
+        <li><strong>Truncated streams</strong> — paste only complete objects; split NDJSON line-by-line if needed.</li>
+      </ul>
+
+      <h2>Repair workflow (validate + format)</h2>
+      <ol>
+        <li>Paste broken JSON into the tool.</li>
+        <li>Click <strong>Validate</strong> — read the error line/message.</li>
+        <li>Apply a small fix and validate again.</li>
+        <li>Click <strong>Format</strong> when parsing succeeds.</li>
+      </ol>
+      <p>
+        Our validator runs <strong>entirely in your browser</strong> — suitable for tokens and private payloads while
+        you repair and re-check syntax.
+      </p>
+
+      <h2>JSON repair vs dedicated auto-fix tools</h2>
+      <p>
+        Some sites auto-fix LLM markdown fences and smart quotes. This tool focuses on
+        <strong>clear validation errors + pretty-print</strong> so you control each edit — a simple alternative when you
+        want a lightweight jsonlint-style checker without uploading data.
+      </p>
+
+      <p>
+        <a href="/" class="btn primary">Open JSON Lint tool</a>
+      </p>
+      <p>
+        Related:
+        <a href="/json-compare.html">JSON compare guide</a>
+        ·
+        <a href="/jsonlint.html">JSONLint guide</a>
+        ·
+        <a href="/lint-json.html">Lint JSON guide</a>
+      </p>
+    </main>
+    <footer class="site-footer wrap">
+      <p>Free tool for developers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+  </body>
+</html>

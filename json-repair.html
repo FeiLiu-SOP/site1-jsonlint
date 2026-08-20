@@ -12,10 +12,10 @@
       gtag("config", "G-WXPLZ9SQD4");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fix Invalid JSON Online — JSON Lint &amp; Repair (Browser, No Upload)</title>
+    <title>Fix LLM JSON Online — Repair ChatGPT &amp; AI Broken JSON (Browser, No Upload)</title>
     <meta
       name="description"
-      content="Fix LLM broken JSON in browser — no upload. Repair trailing commas, smart quotes, and markdown fences; validate and pretty-print free."
+      content="Fix LLM JSON free in your browser — repair ChatGPT and Claude broken output: markdown fences, smart quotes, trailing commas. Validate, see the error line, pretty-print. No upload."
     />
     <link rel="canonical" href="https://site1-jsonlint.pages.dev/json-repair.html" />
     <link rel="stylesheet" href="/style.css" />
@@ -32,44 +32,61 @@
       </div>
     </header>
     <main class="page-main">
-      <h1>JSON Repair — Find and Fix Broken JSON</h1>
+      <h1>Fix LLM JSON — Repair Broken AI Output</h1>
       <p class="lead">
-        <strong>JSON repair</strong> means fixing syntax so <code>JSON.parse</code> succeeds: remove trailing commas,
-        fix quotes, close brackets, and strip invalid comments. Many teams search <strong>json repair</strong> or
-        <strong>jsonlint repair</strong> after copying API responses, LLM output, or legacy config files.
+        Paste JSON from <strong>ChatGPT</strong>, <strong>Claude</strong>, or other LLMs when <code>JSON.parse</code>
+        fails. This guide covers the usual AI mistakes — markdown code fences, smart quotes, trailing commas, and
+        half-finished objects — then use our <strong>browser-only validator</strong> to find the error line and format
+        clean JSON. Nothing is uploaded.
       </p>
 
-      <h2>Common fixes before you validate</h2>
+      <p>
+        <a href="/" class="btn primary">Open fix LLM JSON tool</a>
+      </p>
+
+      <h2>When ChatGPT or Claude gives you broken JSON</h2>
       <ul>
-        <li><strong>Trailing commas</strong> — delete the comma after the last property in <code>{ }</code> or <code>[ ]</code>.</li>
-        <li><strong>Single quotes</strong> — JSON requires double quotes around strings and keys.</li>
-        <li><strong>Unclosed braces</strong> — match every <code>{</code> with <code>}</code> and <code>[</code> with <code>]</code>.</li>
-        <li><strong>Comments</strong> — standard JSON does not allow <code>//</code> or <code>/* */</code>; remove or move to docs.</li>
-        <li><strong>Truncated streams</strong> — paste only complete objects; split NDJSON line-by-line if needed.</li>
+        <li>
+          <strong>Markdown fences</strong> — remove <code>```json</code> and <code>```</code> at the start and end before
+          parsing.
+        </li>
+        <li>
+          <strong>Smart quotes</strong> — replace curly <code>“ ” ‘ ’</code> with straight double quotes
+          <code>"</code>.
+        </li>
+        <li>
+          <strong>Trailing commas</strong> — delete the comma after the last item in <code>{ }</code> or
+          <code>[ ]</code>.
+        </li>
+        <li>
+          <strong>JavaScript extras</strong> — remove <code>undefined</code>, comments, or unquoted keys; JSON is
+          stricter than JavaScript.
+        </li>
+        <li>
+          <strong>Truncated replies</strong> — the model stopped mid-object; paste a complete block or fix missing
+          <code>}</code> / <code>]</code>.
+        </li>
       </ul>
 
-      <h2>Repair workflow (validate + format)</h2>
+      <h2>Fix workflow (see what broke, then repair)</h2>
       <ol>
-        <li>Paste broken JSON into the tool.</li>
-        <li>Click <strong>Validate</strong> — read the error line/message.</li>
-        <li>Apply a small fix and validate again.</li>
+        <li>Paste AI output into the <a href="/">JSON lint tool</a>.</li>
+        <li>Click <strong>Validate</strong> — read the error message and line hint.</li>
+        <li>Fix one issue at a time (fence, quote, comma) and validate again.</li>
         <li>Click <strong>Format</strong> when parsing succeeds.</li>
       </ol>
       <p>
-        Our validator runs <strong>entirely in your browser</strong> — suitable for tokens and private payloads while
-        you repair and re-check syntax.
+        Validation runs <strong>entirely in your browser</strong> — good for API keys, prompts, and private LLM payloads
+        while you fix LLM JSON step by step.
       </p>
 
-      <h2>JSON repair vs dedicated auto-fix tools</h2>
+      <h2>Fix LLM JSON vs auto-repair libraries</h2>
       <p>
-        Some sites auto-fix LLM markdown fences and smart quotes. This tool focuses on
-        <strong>clear validation errors + pretty-print</strong> so you control each edit — a simple alternative when you
-        want a lightweight jsonlint-style checker without uploading data.
+        Tools like <code>json-repair</code> on npm can auto-patch some errors. This site focuses on
+        <strong>clear errors + pretty-print</strong> so you see exactly what failed — a lightweight
+        <strong>fix llm json online</strong> option when you want control without sending data to a server.
       </p>
 
-      <p>
-        <a href="/" class="btn primary">Open JSON Lint tool</a>
-      </p>
       <p>
         Related:
         <a href="/json-compare.html">JSON compare guide</a>

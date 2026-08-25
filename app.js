@@ -9,6 +9,9 @@ const EXAMPLES = {
   "tags": ["api", "json"],
   "meta": {"version": 2, "private": true}
 }`,
+  llm: `\`\`\`json
+{"title":"ChatGPT export","items":[1,2,3],}
+\`\`\``,
 };
 
 function showOk(message, formatted) {
@@ -41,19 +44,73 @@ function parseJson(text) {
   }
 }
 
+function preprocessLlmJson(text) {
+  const repairs = [];
+  let s = text.trim();
+
+  const fenced = s.match(/^```(?:json|JSON)?\s*\r?\n?([\s\S]*?)\r?\n?```\s*$/);
+  if (fenced) {
+    s = fenced[1].trim();
+    repairs.push("removed markdown code fences");
+  } else {
+    const unfenced = s.replace(/^```(?:json|JSON)?\s*\r?\n?/, "").replace(/\r?\n?```\s*$/, "");
+    if (unfenced !== s) {
+      s = unfenced.trim();
+      repairs.push("removed markdown code fences");
+    }
+  }
+
+  const beforeQuotes = s;
+  s = s.replace(/[\u201c\u201d]/g, '"').replace(/[\u2018\u2019]/g, "'");
+  if (s !== beforeQuotes) repairs.push("replaced smart quotes");
+
+  const beforeComma = s;
+  s = s.replace(/,(\s*[}\]])/g, "$1");
+  if (s !== beforeComma) repairs.push("removed trailing commas");
+
+  return { text: s, repairs };
+}
+
+function parseJsonWithRepair(raw) {
+  let result = parseJson(raw.trim());
+  if (!result.error) {
+    return { ...result, repairs: [], text: raw.trim() };
+  }
+
+  const { text, repairs } = preprocessLlmJson(raw);
+  if (!repairs.length) {
+    return { value: null, error: result.error, repairs: [], text: raw.trim() };
+  }
+
+  result = parseJson(text);
+  if (!result.error) {
+    return { ...result, repairs, text };
+  }
+
+  return { value: null, error: result.error, repairs, text };
+}
+
 function runValidate() {
   const text = input.value.trim();
   if (!text) {
     showErr("Paste JSON first.");
     return;
   }
-  const { value, error } = parseJson(text);
+
+  const { value, error, repairs, text: repairedText } = parseJsonWithRepair(text);
   if (error) {
     showErr("Invalid JSON:\n" + error.message);
     lastJson = "";
     return;
   }
+
   lastJson = JSON.stringify(value, null, 2);
+  if (repairs.length) {
+    input.value = repairedText;
+    showOk("Valid JSON after repair (" + repairs.join(", ") + ").", lastJson);
+    return;
+  }
+
   showOk("Valid JSON.", lastJson);
 }
 
@@ -80,14 +137,21 @@ document.getElementById("btn-format").addEventListener("click", () => {
     showErr("Paste JSON first.");
     return;
   }
-  const { value, error } = parseJson(text);
+
+  const { value, error, repairs, text: repairedText } = parseJsonWithRepair(text);
   if (error) {
     showErr("Cannot format — invalid JSON:\n" + error.message);
     return;
   }
+
   const formatted = JSON.stringify(value, null, 2);
   input.value = formatted;
   lastJson = formatted;
+  if (repairs.length) {
+    showOk("Formatted after repair (" + repairs.join(", ") + ").", formatted);
+    return;
+  }
+
   showOk("Formatted.", formatted);
 });
 

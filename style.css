@@ -69,7 +69,53 @@ h1 {
 
 .lead {
   color: var(--muted);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.snippet-answer {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+}
+
+.snippet-answer p {
+  margin: 0;
+}
+
+.snippet-answer p + p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+}
+
+.examples {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.examples-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.btn.example {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  color: color-mix(in srgb, var(--accent) 80%, var(--text));
+}
+
+.btn.example:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.btn.example.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, var(--surface));
 }
 
 .toolbar {
@@ -139,6 +185,36 @@ textarea,
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.faq {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.faq h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.faq dl {
+  margin: 0;
+}
+
+.faq dt {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.faq dt:first-of-type {
+  margin-top: 0;
+}
+
+.faq dd {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .page-main {

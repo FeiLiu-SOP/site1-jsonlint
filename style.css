@@ -217,6 +217,21 @@ textarea,
   font-size: 0.9rem;
 }
 
+.faq ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.faq ul li + li {
+  margin-top: 0.35rem;
+}
+
+.faq h2 + h2 {
+  margin-top: 1.5rem;
+}
+
 .page-main {
   padding: 2rem 1rem 3rem;
   max-width: 720px;

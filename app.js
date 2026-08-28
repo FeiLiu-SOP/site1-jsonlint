@@ -12,6 +12,28 @@ const EXAMPLES = {
   llm: `\`\`\`json
 {"title":"ChatGPT export","items":[1,2,3],}
 \`\`\``,
+  feed: `{
+  "products": [
+    {
+      "id": "SKU-1001",
+      "title": "Blue Widget",
+      "description": "A great widget for your store",
+      "link": "https://example.com/products/blue-widget",
+      "price": "29.99 USD",
+      "availability": "in stock",
+      "brand": "Example Co",
+    }
+  ]
+}`,
+  shopify: `{
+  "product": {
+    "title": "Summer Tee",
+    "variants": [
+      {"sku": "TEE-S", "price": "24.00"},
+      {"sku": "TEE-M", "price": "24.00"},
+    ]
+  }
+}`,
 };
 
 function showOk(message, formatted) {
@@ -179,3 +201,11 @@ document.getElementById("btn-clear").addEventListener("click", () => {
   output.textContent = "Ready.";
   document.querySelectorAll("[data-example]").forEach((b) => b.classList.remove("active"));
 });
+
+const autoExample = new URLSearchParams(window.location.search).get("example");
+if (input && autoExample && EXAMPLES[autoExample]) {
+  input.value = EXAMPLES[autoExample];
+  const btn = document.querySelector('[data-example="' + autoExample + '"]');
+  if (btn) btn.classList.add("active");
+  runValidate();
+}

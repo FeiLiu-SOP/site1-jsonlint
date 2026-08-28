@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix Product Feed JSON Errors — Google Merchant, Meta, Shopify (Browser, No Upload)</title>
+    <meta
+      name="description"
+      content="Fix product feed JSON syntax errors free in your browser — Google Merchant Center, Meta catalog, Shopify product.json. Trailing commas, bad quotes, unclosed brackets. Validate and repair. No upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/product-feed-json" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>Fix Product Feed JSON Errors</h1>
+      <div class="snippet-answer">
+        <p><strong>Google Merchant / Meta product feed JSON syntax error?</strong></p>
+        <p>
+          Paste your catalog JSON below — find the broken line, repair trailing commas, bad quotes, and unclosed
+          brackets. Runs in your browser; nothing is uploaded.
+        </p>
+      </div>
+      <p class="lead">
+        For <strong>Google Merchant Center</strong>, <strong>Meta</strong>, <strong>Shopify</strong>, and
+        <strong>WooCommerce</strong> product feeds when upload or sync fails due to invalid JSON — not server or
+        WordPress routing issues.
+      </p>
+
+      <div class="examples">
+        <span class="examples-label">Try an example:</span>
+        <button type="button" class="btn example" data-example="feed">Broken product feed</button>
+        <button type="button" class="btn example" data-example="shopify">Shopify-style JSON</button>
+        <button type="button" class="btn example" data-example="llm">LLM-generated feed</button>
+        <button type="button" class="btn example" data-example="valid">Valid feed</button>
+      </div>
+
+      <div class="toolbar">
+        <button type="button" id="btn-validate" class="btn primary">Validate</button>
+        <button type="button" id="btn-format" class="btn">Format</button>
+        <button type="button" id="btn-download" class="btn">Download JSON</button>
+        <button type="button" id="btn-clear" class="btn ghost">Clear</button>
+      </div>
+
+      <label class="label" for="input">Product feed JSON</label>
+      <textarea
+        id="input"
+        spellcheck="false"
+        placeholder='{"products":[{"id":"SKU-1","title":"Widget","price":"19.99"}]}'
+      ></textarea>
+
+      <label class="label" for="output">Result</label>
+      <pre id="output" aria-live="polite">Ready.</pre>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>Google Merchant / Meta product feed JSON syntax error — what now?</dt>
+          <dd>
+            Usually bad quotes, a trailing comma, or an unclosed bracket. Paste the feed JSON above, click Validate, read
+            the error line, then Repair. Re-upload to Merchant Center or Meta when valid.
+          </dd>
+          <dt>Shopify “Invalid JSON: unexpected token” on product.json?</dt>
+          <dd>
+            Often curly quotes or a trailing comma in theme schema or product JSON. Paste here, fix the flagged line,
+            then save back to Shopify or your API payload.
+          </dd>
+          <dt>LLM-generated product feed JSON won’t parse?</dt>
+          <dd>
+            Models often add trailing commas, smart quotes, or markdown fences. Validate here — common issues are
+            auto-repaired and you see what changed before using the feed on Google or Shopify.
+          </dd>
+          <dt>Is my catalog data uploaded?</dt>
+          <dd>No. Validation and repair run entirely in your browser.</dd>
+        </dl>
+      </section>
+
+      <p class="lead" style="margin-top: 2rem">
+        Related:
+        <a href="/json-repair">Fix LLM JSON</a>
+        ·
+        <a href="/">JSON lint tool</a>
+        ·
+        <a href="https://site2-csvtojson.pages.dev/" rel="noopener">CSV to JSON</a>
+      </p>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free tool for developers and sellers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

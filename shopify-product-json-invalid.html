@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix Shopify Product JSON Invalid — Unexpected Token &amp; Schema Errors</title>
+    <meta
+      name="description"
+      content="Shopify product JSON invalid or unexpected token? Fix trailing commas, smart quotes, and schema errors in your browser before saving theme JSON or API payloads. No upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/shopify-product-json-invalid" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main wrap">
+      <h1>Shopify Product JSON Invalid — How to Fix It</h1>
+      <div class="snippet-answer">
+        <p><strong>Shopify says &quot;Invalid JSON: unexpected token&quot;?</strong></p>
+        <p>
+          Usually curly quotes, a trailing comma, or a missing bracket in <code>product.json</code>, theme schema, or a
+          feed export. Paste the block into a browser validator, read the error line, repair, then save back to Shopify.
+        </p>
+      </div>
+      <p class="lead">
+        This guide covers <strong>syntax-level</strong> JSON problems in Shopify product data — not Cloudflare 301/HTML
+        responses, app OAuth, or server routing errors.
+      </p>
+
+      <p>
+        <a href="/product-feed-json" class="btn primary">Open Product Feed JSON Fixer</a>
+      </p>
+
+      <h2>Common Shopify JSON errors</h2>
+      <ul>
+        <li><strong>Invalid JSON: unexpected token</strong> — often a trailing comma or smart quote in a string field</li>
+        <li><strong>settings_schema.json</strong> parse error when saving theme settings</li>
+        <li><strong>product.json</strong> or Admin API payload rejected after manual edit</li>
+        <li>Metafield or variant array with an unclosed <code>{</code> or <code>[</code></li>
+        <li>LLM-generated product JSON pasted into a theme or feed block</li>
+      </ul>
+
+      <h2>Fix in 3 steps</h2>
+      <ol>
+        <li>Copy the broken JSON from the theme editor, export file, or API response.</li>
+        <li>
+          Paste into the <a href="/product-feed-json">product feed fixer</a> → click <strong>Validate</strong> → read the
+          line number → repair trailing commas, quotes, and brackets.
+        </li>
+        <li>Paste valid JSON back into Shopify and save or re-submit the feed sync.</li>
+      </ol>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>What causes &quot;Invalid JSON: unexpected token&quot; in Shopify?</dt>
+          <dd>
+            Most often curly/smart quotes in titles or descriptions, a trailing comma after the last variant field, or a
+            missing closing brace. The parser points near the first illegal character — fix that line first.
+          </dd>
+          <dt>Is it safe to paste product.json into an online tool?</dt>
+          <dd>
+            Our fixer runs entirely in your browser; nothing is uploaded. Still avoid pasting live API secrets — use a
+            redacted copy if the payload includes tokens.
+          </dd>
+          <dt>Theme JSON vs catalog feed — same fix?</dt>
+          <dd>
+            Same JSON rules. Theme <code>settings_schema.json</code> and Merchant Center product feeds both fail on
+            trailing commas and bad quotes. Server/HTML errors need a different fix (check URL and response type).
+          </dd>
+        </dl>
+      </section>
+
+      <p class="lead" style="margin-top: 2rem">
+        Related:
+        <a href="/product-feed-json">Product feed JSON errors</a>
+        ·
+        <a href="/json-repair">Fix LLM JSON</a>
+        ·
+        <a href="/">JSON lint tool</a>
+      </p>
+      <p class="lead" style="font-size: 0.9rem; color: var(--muted)">
+        We may earn from qualifying links. Tools run in your browser; we don&apos;t store your feed.
+      </p>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free tool for Shopify sellers and developers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+  </body>
+</html>

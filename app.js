@@ -128,7 +128,6 @@ function runValidate() {
 
   lastJson = JSON.stringify(value, null, 2);
   if (repairs.length) {
-    input.value = repairedText;
     showOk("Valid JSON after repair (" + repairs.join(", ") + ").", lastJson);
     return;
   }

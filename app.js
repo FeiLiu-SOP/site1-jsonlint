@@ -145,7 +145,9 @@ document.querySelectorAll("[data-example]").forEach((btn) => {
     input.value = sample;
     document.querySelectorAll("[data-example]").forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-    runValidate();
+    lastJson = "";
+    output.className = "";
+    output.textContent = "Ready. Click Validate.";
   });
 });
 

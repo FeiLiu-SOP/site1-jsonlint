@@ -94,9 +94,30 @@
         <strong>fix llm json online</strong> option when you want control without sending data to a server.
       </p>
 
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>LLM JSON trailing comma — how do I repair it?</dt>
+          <dd>
+            ChatGPT and Claude often leave a comma after the last property in an object or the last item in an array
+            (<code>{"a":1,}</code>). Strict JSON parsers reject that. Paste the block into the
+            <a href="/">JSON lint tool</a>, validate, delete the extra comma (or use repair), then format. Same issue
+            breaks API payloads and
+            <a href="/google-merchant-feed-json-error">Google Merchant Center JSON feeds</a>.
+          </dd>
+          <dt>Why does AI JSON fail when it “looks fine”?</dt>
+          <dd>
+            Models also insert smart quotes, markdown <code>```json</code> fences, or cut off mid-object. Fix fences and
+            quotes first, then trailing commas — validate after each change.
+          </dd>
+        </dl>
+      </section>
+
       <p>
         Related:
         <a href="/product-feed-json">Fix product feed JSON</a>
+        ·
+        <a href="/google-merchant-feed-json-error">Google Merchant JSON feed error</a>
         ·
         <a href="/json-compare.html">JSON compare guide</a>
         ·

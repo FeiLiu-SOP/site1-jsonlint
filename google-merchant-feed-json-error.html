@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Merchant Center JSON Feed Error — Fix Syntax &amp; Re-upload</title>
+    <meta
+      name="description"
+      content="Google Merchant Center JSON feed error? Fix trailing commas, smart quotes, and invalid JSON in your browser, then re-upload. Covers common Merchant feed parse failures. No upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/google-merchant-feed-json-error" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main wrap">
+      <h1>Google Merchant Center JSON Feed Error — How to Fix It</h1>
+      <div class="snippet-answer">
+        <p><strong>Merchant Center rejects your JSON product feed?</strong></p>
+        <p>
+          Most “JSON feed error” / syntax failures are a trailing comma, smart quotes in a title, or an unclosed
+          <code>{</code> / <code>[</code>. Paste the feed into a browser fixer, repair the flagged line, then upload
+          again in Google Merchant Center.
+        </p>
+      </div>
+      <p class="lead">
+        This page is for <strong>JSON syntax</strong> problems in product feeds. It does not cover account suspension,
+        policy disapprovals, or shipping/tax attribute rules that pass JSON but still fail Merchant review.
+      </p>
+
+      <p>
+        <a href="/product-feed-json" class="btn primary">Open Product Feed JSON Fixer</a>
+      </p>
+
+      <h2>Common Google Merchant Center JSON feed errors</h2>
+      <ul>
+        <li><strong>Invalid JSON / parse error</strong> — trailing comma after the last product or field</li>
+        <li><strong>Unexpected token</strong> — curly/smart quotes in <code>title</code> or <code>description</code></li>
+        <li><strong>Unclosed bracket</strong> — missing <code>}</code> or <code>]</code> in the products array</li>
+        <li><strong>Not JSON</strong> — file is CSV/XML/HTML error page while the feed type is set to JSON</li>
+        <li><strong>LLM-built feed</strong> — ChatGPT/Claude added markdown fences or a trailing comma</li>
+      </ul>
+
+      <h2>Fix in 3 steps</h2>
+      <ol>
+        <li>Download or copy the JSON feed Merchant Center rejected (or the file you were about to upload).</li>
+        <li>
+          Paste into the <a href="/product-feed-json">product feed fixer</a> → <strong>Validate</strong> → note the
+          line → repair commas, quotes, and brackets.
+        </li>
+        <li>Save the valid JSON and re-upload / re-fetch the feed in Google Merchant Center.</li>
+      </ol>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>What does a Google Merchant Center JSON feed error usually mean?</dt>
+          <dd>
+            The file is not valid JSON, so Google cannot parse products. Fix syntax first (commas, quotes, brackets),
+            then re-upload. Attribute or policy issues are a separate step after the feed parses.
+          </dd>
+          <dt>Can a trailing comma break my Merchant feed?</dt>
+          <dd>
+            Yes. JSON does not allow a comma after the last item in an object or array. LLM exports and hand-edited
+            catalogs often leave one in — remove it or use the fixer, then upload again.
+          </dd>
+          <dt>Is it safe to paste my product feed into this tool?</dt>
+          <dd>
+            Validation and repair run entirely in your browser; we do not upload your catalog. Still avoid pasting live
+            API secrets — redact tokens if they appear in the file.
+          </dd>
+          <dt>JSON is valid but Merchant still rejects items — why?</dt>
+          <dd>
+            Valid JSON only means the file parses. Missing required attributes, bad links, or policy flags are Merchant
+            content rules, not JSON syntax. Fix syntax here first, then use Merchant’s item issues report.
+          </dd>
+        </dl>
+      </section>
+
+      <p class="lead" style="margin-top: 2rem">
+        Related:
+        <a href="/product-feed-json">Product feed JSON fixer</a>
+        ·
+        <a href="/shopify-product-json-invalid">Shopify product JSON invalid</a>
+        ·
+        <a href="/json-repair">Fix LLM JSON</a>
+        ·
+        <a href="/">JSON lint tool</a>
+      </p>
+      <p class="lead" style="font-size: 0.9rem; color: var(--muted)">
+        We may earn from qualifying links. Tools run in your browser; we don&apos;t store your feed.
+      </p>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free guide for Google Merchant Center sellers. JSON is processed in your browser — not sent to a server.</p>
+    </footer>
+  </body>
+</html>

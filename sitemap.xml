@@ -22,17 +22,22 @@
   </url>
   <url>
     <loc>https://site1-jsonlint.pages.dev/json-repair</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://site1-jsonlint.pages.dev/product-feed-json</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://site1-jsonlint.pages.dev/shopify-product-json-invalid</loc>
     <lastmod>2026-09-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://site1-jsonlint.pages.dev/google-merchant-feed-json-error</loc>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>

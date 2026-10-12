@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meta Catalog Feed JSON Error — Fix Syntax Before Upload</title>
+    <meta
+      name="description"
+      content="Meta catalog feed JSON error? Fix trailing commas, smart quotes, and invalid JSON in your browser, then re-upload to Meta Commerce Manager. Meta vs Google feed differences explained."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/meta-catalog-feed-json" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main wrap">
+      <h1>Meta Catalog Feed JSON Error — How to Fix It</h1>
+      <div class="snippet-answer">
+        <p><strong>Meta rejected your catalog JSON feed?</strong></p>
+        <p>
+          Most Meta catalog feed JSON errors are the same syntax problems as Google: a trailing comma, smart quotes in
+          <code>title</code> or <code>description</code>, or an unclosed <code>{</code> / <code>[</code>. Paste the feed
+          into a browser fixer, repair the flagged line, then upload again in Meta Commerce Manager.
+        </p>
+        <p>
+          <strong>Boundary:</strong> This page covers <strong>JSON that won&apos;t parse</strong>. Policy, image, or
+          price mismatches after the file is valid JSON are separate Commerce Manager item issues.
+        </p>
+      </div>
+
+      <p>
+        <a href="/product-feed-json" class="btn primary">Open Product Feed JSON Fixer</a>
+      </p>
+
+      <h2>Meta catalog feed vs Google Merchant JSON (one paragraph)</h2>
+      <p>
+        Both platforms need <strong>valid JSON</strong> first, but the <strong>schema differs</strong>. Google Merchant
+        Center often expects a top-level <code>items</code> array with fields like <code>id</code>,
+        <code>title</code>, <code>link</code>, and <code>price</code>. Meta catalog feeds (Commerce Manager / catalog API)
+        use their own product object shape — commonly <code>id</code>, <code>title</code>, <code>description</code>,
+        <code>availability</code>, <code>condition</code>, <code>price</code>, <code>link</code>, and
+        <code>image_link</code> — and may wrap rows differently depending on whether you upload a file or sync from
+        Shopify. <strong>Do not copy a Google feed file verbatim into Meta</strong> without mapping fields; fix JSON
+        syntax here, then align attribute names to Meta&apos;s catalog spec in Commerce Manager.
+      </p>
+
+      <h2>Common Meta catalog JSON feed errors</h2>
+      <ul>
+        <li><strong>Invalid JSON / parse error</strong> — trailing comma after the last product</li>
+        <li><strong>Unexpected token</strong> — curly quotes from Excel or ChatGPT exports</li>
+        <li><strong>Unclosed bracket</strong> — missing <code>}</code> in the products array</li>
+        <li><strong>Wrong file type</strong> — CSV uploaded while the integration expects JSON</li>
+        <li><strong>Markdown fences</strong> — LLM wrapped output in <code>```json</code> blocks</li>
+      </ul>
+
+      <h2>Fix in 3 steps</h2>
+      <ol>
+        <li>Download or copy the JSON catalog Meta Commerce Manager rejected.</li>
+        <li>
+          Paste into the <a href="/product-feed-json">product feed fixer</a> → <strong>Validate</strong> → fix commas,
+          quotes, and brackets on the reported line.
+        </li>
+        <li>Re-upload the valid JSON and confirm field names match Meta&apos;s catalog requirements.</li>
+      </ol>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>What does a Meta catalog feed JSON error usually mean?</dt>
+          <dd>
+            The upload cannot be parsed as JSON. Fix syntax first (commas, quotes, brackets), then re-upload. Missing Meta
+            required fields are a separate step after the file parses.
+          </dd>
+          <dt>Can I use the same JSON file for Google Merchant and Meta?</dt>
+          <dd>
+            Only if you map fields to each platform&apos;s schema. Syntax repair is shared; attribute names and required
+            columns are not. See our
+            <a href="/google-merchant-feed-json-error">Google Merchant JSON feed error</a> page for GMC-specific notes.
+          </dd>
+          <dt>Why does Meta say my feed is invalid when JSON lint passes?</dt>
+          <dd>
+            &quot;Valid JSON&quot; means the parser succeeded. Meta may still reject rows for bad URLs, currency format,
+            or missing <code>id</code> / <code>image_link</code>. Fix syntax here, then use Commerce Manager&apos;s
+            diagnostics for row-level issues.
+          </dd>
+          <dt>Is it safe to paste my catalog into this tool?</dt>
+          <dd>
+            Validation runs in your browser; we do not upload your catalog. Redact API tokens or secrets if they appear in
+            the file.
+          </dd>
+        </dl>
+      </section>
+
+      <p class="lead" style="margin-top: 2rem">
+        Related:
+        <a href="/product-feed-json">Product feed JSON fixer</a>
+        ·
+        <a href="/google-merchant-feed-json-error">Google Merchant JSON feed error</a>
+        ·
+        <a href="/shopify-product-json-invalid">Shopify product JSON invalid</a>
+        ·
+        <a href="/json-repair">Fix LLM JSON</a>
+      </p>
+      <p class="lead" style="font-size: 0.9rem; color: var(--muted)">
+        Tools run in your browser; we don&apos;t store your feed.
+      </p>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free guide for Meta Commerce Manager &amp; catalog sellers. JSON is processed in your browser.</p>
+    </footer>
+  </body>
+</html>

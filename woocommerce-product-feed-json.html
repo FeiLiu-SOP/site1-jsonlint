@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPLZ9SQD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WXPLZ9SQD4");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WooCommerce Product Feed JSON Invalid — Fix Before Sync</title>
+    <meta
+      name="description"
+      content="WooCommerce product feed JSON invalid? Fix trailing commas, smart quotes, and broken arrays in your browser, then re-sync to Google, Meta, or your feed plugin. No upload."
+    />
+    <link rel="canonical" href="https://site1-jsonlint.pages.dev/woocommerce-product-feed-json" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">JSON Lint Online</a>
+        <nav>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main wrap">
+      <h1>WooCommerce Product Feed JSON Invalid — How to Fix It</h1>
+      <div class="snippet-answer">
+        <p><strong>WooCommerce product feed JSON invalid or won&apos;t parse?</strong></p>
+        <p>
+          Most failures are syntax: a trailing comma after the last product, curly quotes in
+          <code>name</code> / <code>description</code>, or an unclosed <code>[</code> in a variations array. Paste the
+          export or REST payload into a browser fixer, repair the flagged line, then re-upload or re-sync your feed
+          plugin.
+        </p>
+        <p>
+          <strong>Boundary:</strong> This page covers <strong>JSON that won&apos;t parse</strong>. Missing Woo attributes,
+          wrong GTIN mapping, or Google Listings &amp; Ads policy rejects after the file is valid JSON are separate
+          catalog issues.
+        </p>
+      </div>
+
+      <p>
+        <a href="/product-feed-json" class="btn primary">Open Product Feed JSON Fixer</a>
+      </p>
+
+      <h2>Where WooCommerce JSON feeds break</h2>
+      <p>
+        Woo shops often export products as <strong>CSV/XML</strong> for classic Shopping plugins, but JSON shows up in
+        <strong>REST API</strong> dumps, custom feed apps, LLM-built import files, and some middleware that pushes
+        Woo catalog data to Google or Meta as JSON. The parser does not care which plugin wrote the file — if the JSON is
+        illegal, sync stops before attribute mapping starts.
+      </p>
+
+      <h2>Common WooCommerce product feed JSON errors</h2>
+      <ul>
+        <li><strong>Invalid JSON / parse error</strong> — trailing comma after the last SKU or variation</li>
+        <li><strong>Unexpected token</strong> — smart quotes pasted from Excel, Docs, or ChatGPT into titles</li>
+        <li><strong>Unclosed bracket</strong> — broken <code>variations</code> or <code>images</code> arrays</li>
+        <li><strong>Markdown fences</strong> — LLM wrapped the payload in <code>```json</code> blocks</li>
+        <li><strong>Wrong envelope</strong> — single product object where the connector expects an array (or the reverse)</li>
+      </ul>
+
+      <h2>Fix in 3 steps</h2>
+      <ol>
+        <li>Copy the rejected JSON from the feed plugin log, export file, or Woo REST response.</li>
+        <li>
+          Paste into the <a href="/product-feed-json">product feed fixer</a> → <strong>Validate</strong> → fix commas,
+          quotes, and brackets on the reported line.
+        </li>
+        <li>Save the valid JSON and re-run the Woo → Google / Meta / marketplace sync.</li>
+      </ol>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <dl>
+          <dt>What does &quot;WooCommerce product feed JSON invalid&quot; usually mean?</dt>
+          <dd>
+            The connector cannot parse the file as JSON. Fix syntax first, then re-sync. Required Woo fields (SKU, price,
+            stock) are checked only after the document parses.
+          </dd>
+          <dt>My feed plugin uses CSV — do I still need this?</dt>
+          <dd>
+            Only when the pipeline or middleware uses JSON (API export, custom script, or a JSON destination). Pure CSV
+            feeds need a CSV tool, not a JSON fixer.
+          </dd>
+          <dt>Valid JSON but Google / Meta still rejects products?</dt>
+          <dd>
+            Syntax is fixed; row-level issues remain (bad image URL, currency, missing <code>id</code>). See
+            <a href="/google-merchant-feed-json-error">Google Merchant JSON feed error</a> and
+            <a href="/meta-catalog-feed-json">Meta catalog feed JSON error</a> for platform-specific notes.
+          </dd>
+          <dt>Is it safe to paste Woo product JSON here?</dt>
+          <dd>
+            Validation runs in your browser; we do not upload your catalog. Redact API keys or customer PII if they appear
+            in the payload.
+          </dd>
+        </dl>
+      </section>
+
+      <p class="lead" style="margin-top: 2rem">
+        Related:
+        <a href="/product-feed-json">Product feed JSON fixer</a>
+        ·
+        <a href="/shopify-product-json-invalid">Shopify product JSON invalid</a>
+        ·
+        <a href="/google-merchant-feed-json-error">Google Merchant JSON feed error</a>
+        ·
+        <a href="/meta-catalog-feed-json">Meta catalog feed JSON error</a>
+        ·
+        <a href="/json-repair">Fix LLM JSON</a>
+      </p>
+      <p class="lead" style="font-size: 0.9rem; color: var(--muted)">
+        We may earn from qualifying links. Tools run in your browser; we don&apos;t store your feed.
+      </p>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>Free guide for WooCommerce sellers &amp; feed plugins. JSON is processed in your browser.</p>
+    </footer>
+  </body>
+</html>
